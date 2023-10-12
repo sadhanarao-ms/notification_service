@@ -18,6 +18,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  
 
 development:
   <<: *default
@@ -62,9 +63,7 @@ test:
 staging:
   <<: *default
   database: notifications_staging
-  host: <%= ENV['PG_HOST'] %>
-  username: <%= ENV['PG_USER'] %>
-  password: <%= ENV['PG_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 
 production:
   <<: *default
