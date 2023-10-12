@@ -21,7 +21,7 @@ default: &default
 
 development:
   <<: *default
-  database: recommendations_development
+  database: notifications_development
   port: <%= ENV['PG_PORT'] || 5432 %>
 
   # The specified database role being used to connect to postgres.
@@ -56,12 +56,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: recommendations_test
+  database: notifications_test
   port: <%= ENV['PG_PORT'] || 5432 %>
   
 staging:
   <<: *default
-  database: recommendations
+  database: notifications_staging
   host: <%= ENV['PG_HOST'] %>
   username: <%= ENV['PG_USER'] %>
   password: <%= ENV['PG_PASSWORD'] %>
